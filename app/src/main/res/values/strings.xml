@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">EmployBee</string>
     <string name="time">""</string>
+    <string name="tasks1STR">Opening Tasks</string>
+    <string name="tasks2STR">Afternoon Tasks</string>
+    <string name="tasks3STR">CLosing Tasks</string>
 </resources>

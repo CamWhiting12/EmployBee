@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/daBom/AndroidStudioProjects/EmployBee/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/daBom/AndroidStudioProjects/EmployBee/app/src/main/res/layout-land/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/daBom/AndroidStudioProjects/EmployBee/app/src/main/res/layout/activity_main.xml" value="0.128" />
       </map>
     </option>
   </component>

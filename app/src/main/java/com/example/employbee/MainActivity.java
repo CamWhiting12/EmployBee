@@ -1,4 +1,5 @@
 package com.example.employbee;
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextClock;
 import java.time.ZonedDateTime;
@@ -50,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
             t = t.substring(0,5);
 
         time.setText(t);
+    }
+
+    public void startTasks1(View v) {
+        Intent intent = new Intent(this, Tasks1Activity.class);
+        startActivity(intent);
     }
 
 }

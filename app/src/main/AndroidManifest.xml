@@ -10,9 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployBee">
         <activity
+            android:name=".Tasks1Activity"
+            android:exported="false"
+            android:label="@string/title_activity_tasks1"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

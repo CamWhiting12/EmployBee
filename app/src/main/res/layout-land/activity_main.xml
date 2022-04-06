@@ -61,6 +61,7 @@
             android:background="@color/black"
             android:fadingEdge="none"
             android:fontFamily="sans-serif-medium"
+            android:onClick="startTasks1"
             android:text="@string/tasks1STR"
             android:textColor="@color/gold" />
 

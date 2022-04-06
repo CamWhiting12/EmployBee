@@ -4,6 +4,13 @@
     <string name="tasks1STR">Opening Tasks</string>
     <string name="tasks2STR">Afternoon Tasks</string>
     <string name="tasks3STR">CLosing Tasks</string>
+    <string name="title_activity_tasks1">Tasks1Activity</string>
+    <string name="tab_text_1">Opening Tasks</string>
+    <string name="tab_text_2">Afternoon Tasks</string>
+    <string name="tab_text_3">Closing Tasks</string>
+    <string name="allTasksTitleSTR">Tasks</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="managerMode">manager mode</string>
     <string name="protocolButtonText">protocol</string>
     <string name="schedulesButtonText">schedules</string>

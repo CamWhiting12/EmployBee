@@ -4,4 +4,12 @@
     <string name="tasks1STR">Opening Tasks</string>
     <string name="tasks2STR">Afternoon Tasks</string>
     <string name="tasks3STR">CLosing Tasks</string>
+    <string name="managerMode">manager mode</string>
+    <string name="protocolButtonText">protocol</string>
+    <string name="schedulesButtonText">schedules</string>
+    <string name="TaskPreview1">task preview 1 task preview 1</string>
+    <string name="previewAltText1">preview list of tasks for opening</string>
+    <string name="previewAltText2">preview list of tasks for afternoon</string>
+    <string name="previewAltText3">preview list of tasks for closing</string>
+    <string name="mapButtonText">map</string>
 </resources>

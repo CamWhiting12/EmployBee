@@ -19,4 +19,5 @@
     <string name="previewAltText2">preview list of tasks for afternoon</string>
     <string name="previewAltText3">preview list of tasks for closing</string>
     <string name="mapButtonText">map</string>
+    <string name="job1TitleSTR">Chef</string>
 </resources>

@@ -58,4 +58,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void startProtocol(View v) {
+        Intent intent = new Intent(this, protocol_page.class);
+        startActivity(intent);
+    }
+
 }

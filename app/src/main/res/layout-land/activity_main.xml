@@ -197,6 +197,7 @@
             android:layout_height="51dp"
             android:layout_weight="1"
             android:background="@color/gold"
+            android:onClick="startTasks1"
             android:text="@string/schedulesButtonText"
             android:textColor="@color/black" />
 

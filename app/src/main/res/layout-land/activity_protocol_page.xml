@@ -29,26 +29,36 @@
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteY="45dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <RelativeLayout
             android:id="@+id/searchLayout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:context="com.example.test.searchview.MainActivity">
 
             <ListView
                 android:id="@+id/lv1"
-                android:layout_width="315dp"
-                android:layout_height="207dp"
+                android:layout_width="488dp"
+                android:layout_height="424dp"
                 android:layout_below="@+id/searchView"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="52dp"
                 android:divider="#ad5"
                 android:dividerHeight="2dp" />
 
@@ -59,18 +69,121 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="56dp"
                 android:iconifiedByDefault="false"
-                android:queryHint="Search Here" />
+                android:queryHint="Search Here">
+
+            </SearchView>
 
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/searchLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="18sp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/button6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/suggestedProtocol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/suggested"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gold"
+                    android:backgroundTint="@color/gold"
+                    android:text="@string/option1"
+                    android:textColor="@color/black"
+                    app:rippleColor="@color/gold" />
+
+                <Button
+                    android:id="@+id/option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gold"
+                    android:text="@string/option1"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gold"
+                    android:text="@string/option1"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gold"
+                    android:text="@string/option1"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gold"
+                    android:text="@string/option1"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/option6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gold"
+                    android:text="@string/option1"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/option7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gold"
+                    android:text="@string/option1"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/option8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gold"
+                    android:text="@string/option1"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/option9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gold"
+                    android:text="@string/option1"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"

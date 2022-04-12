@@ -22,4 +22,8 @@
     <string name="protocolTitle">PROTOCOL</string>
     <string name="option1">option 1</string>
     <string name="job1TitleSTR">Chef</string>
+    <string name="job2TitleSTR">Dishwasher</string>
+    <string name="job3TitleSTR">Line Cook</string>
+    <string name="job4TitleSTR">Waitstaff</string>
+    <string name="suggested">Suggested</string>
 </resources>

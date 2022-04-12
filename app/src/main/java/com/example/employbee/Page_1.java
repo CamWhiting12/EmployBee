@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.io.IOException;
-
+import java.util.*;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Page_1#newInstance} factory method to
@@ -22,6 +24,7 @@ public class Page_1 extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private ListView lv;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -58,12 +61,23 @@ public class Page_1 extends Fragment {
         }
 
         Context context = null;
-
+        ArrayList<Task> tasks = new ArrayList<Task>;
         try {
-            EditTasks.getTasks(context, "StyleSheet.xls");
+           tasks = EditTasks.getTasks(context, "StyleSheet.xls");
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+       lv = (ListView) lv.findViewById(R.id.taskListView1);
+
+        ArrayList<String> taskStrings = new ArrayList<String>();
+
+        for (Task t: tasks) {
+            taskStrings.add(t.getTask());
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.SOMETHING, R.id.job1task1, taskStrings);
+        lv.setAdapter(arrayAdapter);
     }
 
     @Override

@@ -80,7 +80,7 @@ public class Page_1 extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_page_2, container, false);
 
-        lv = (ListView) v.findViewById(R.id.taskListView1);
+        lv = (ListView) v.findViewById(R.id.taskListView1); // Change taskListView1
         ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.fragment_page_2, taskStrings);
 
         lv.setAdapter(adapter);

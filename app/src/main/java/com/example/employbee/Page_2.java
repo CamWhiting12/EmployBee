@@ -83,8 +83,14 @@ public class Page_2 extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_page_2, container, false);
 
+        // Test array
+        List<String> sampleList = new ArrayList<String>();
+        sampleList.add("task 1");
+        sampleList.add("task 2");
+        sampleList.add("task 78");
+
         lv = (ListView) v.findViewById(R.id.taskListView1);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.fragment_page_2, taskStrings);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.fragment_page_2, sampleList);
 
         lv.setAdapter(adapter);
         return v;

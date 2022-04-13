@@ -63,16 +63,16 @@ public class Page_1 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        Context context = null;
-        try {
-            tasks = EditTasks.getTasks(context, "StyleSheet.xls");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        for (Task t: tasks) {
-            taskStrings.add(t.getTask());
-        }
+//        Context context = null;
+//        try {
+//            tasks = EditTasks.getTasks(context, "StyleSheet.xls");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        for (Task t: tasks) {
+//            taskStrings.add(t.getTask());
+//        }
     }
 
     @Override
@@ -80,10 +80,10 @@ public class Page_1 extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_page_2, container, false);
 
-        lv = (ListView) v.findViewById(R.id.taskListView1); // Change taskListView1
-        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.fragment_page_2, taskStrings);
-
-        lv.setAdapter(adapter);
+//        lv = (ListView) v.findViewById(R.id.taskListView1); // Change taskListView1
+//        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.fragment_page_2, taskStrings);
+//
+//        lv.setAdapter(adapter);
         return v;
     }
 }

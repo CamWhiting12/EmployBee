@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,21 +62,31 @@ public class Page_2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        Log.d("Henry", "starting oncreate");
+//        Log.d("Henry", "" + getArguments());
+//
+//        if (getArguments() != null) {
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
+//            Log.d("Henry", "" + mParam1 + " " + mParam2);
+//        }
 
-        Context context = null;
-        try {
-            tasks = EditTasks.getTasks(context, "StyleSheet.xls");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Log.d("Henry", "getArgs null");
 
-        for (Task t: tasks) {
-            taskStrings.add(t.getTask());
-        }
+        Context context = getActivity().getApplicationContext();
+        taskStrings = new ArrayList<String>();
+
+        Log.d("Henry", "before try");
+//        try {
+//            tasks = EditTasks.getTasks(context, "stylesheet.xls");
+//            Log.d("Henry", "" + tasks.size());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        for (Task t: tasks) {
+//            taskStrings.add(t.getTask());
+//        }
     }
 
     @Override
@@ -84,13 +95,13 @@ public class Page_2 extends Fragment {
         View v = inflater.inflate(R.layout.fragment_page_2, container, false);
 
         // Test array
-        List<String> sampleList = new ArrayList<String>();
+        ArrayList<String> sampleList = new ArrayList<String>();
         sampleList.add("task 1");
         sampleList.add("task 2");
         sampleList.add("task 78");
 
         lv = (ListView) v.findViewById(R.id.taskListView1);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.fragment_page_2, sampleList);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, sampleList);
 
         lv.setAdapter(adapter);
         return v;

@@ -20,7 +20,7 @@
             android:id="@+id/protocolTitleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="sans-serif"
             android:text="@string/protocolTitle"
             android:textAlignment="center"
             android:textColor="@color/gold"
@@ -59,15 +59,16 @@
                 android:layout_height="424dp"
                 android:layout_below="@+id/searchView"
                 android:layout_marginTop="52dp"
-                android:divider="#ad5"
-                android:dividerHeight="2dp" />
+                android:cacheColorHint="@color/gray"
+                android:divider="@color/gold"
+                android:dividerHeight="2dp">
+
+            </ListView>
 
             <SearchView
                 android:id="@+id/searchView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="56dp"
                 android:iconifiedByDefault="false"
                 android:queryHint="Search Here">
 
@@ -85,8 +86,9 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
+                android:id="@+id/OptionsLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="18sp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toTopOf="@+id/button6"
@@ -112,6 +114,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/gold"
                     android:backgroundTint="@color/gold"
+                    android:onClick="goHome"
                     android:text="@string/option1"
                     android:textColor="@color/black"
                     app:rippleColor="@color/gold" />
@@ -140,45 +143,19 @@
                     android:text="@string/option1"
                     android:textColor="@color/black" />
 
-                <Button
-                    android:id="@+id/option5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/gold"
-                    android:text="@string/option1"
-                    android:textColor="@color/black" />
+            </LinearLayout>
 
-                <Button
-                    android:id="@+id/option6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/gold"
-                    android:text="@string/option1"
-                    android:textColor="@color/black" />
+            <LinearLayout
+                android:id="@+id/fragmentFeature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/option7"
+                <TextView
+                    android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/gold"
-                    android:text="@string/option1"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:id="@+id/option8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/gold"
-                    android:text="@string/option1"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:id="@+id/option9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/gold"
-                    android:text="@string/option1"
-                    android:textColor="@color/black" />
+                    android:text="TODO" />
             </LinearLayout>
 
         </LinearLayout>

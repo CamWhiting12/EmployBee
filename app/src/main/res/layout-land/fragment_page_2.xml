@@ -39,6 +39,11 @@
                     android:layout_height="wrap_content"
                     android:text="First Task" />
 
+                <ListView
+                    android:id="@+id/listViewTasks1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
             </LinearLayout>
 
             <LinearLayout

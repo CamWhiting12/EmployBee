@@ -125,7 +125,7 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/taskList1"
+            android:id="@+id/taskListView1"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="@dimen/ButtonWidth"
             android:layout_height="wrap_content"
@@ -184,7 +184,7 @@
     <LinearLayout
         android:id="@+id/BottomButtonLayout"
         android:layout_width="0dp"
-        android:layout_height="129dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
@@ -224,5 +224,19 @@
             android:text="@string/protocolButtonText"
             android:textColor="@color/black" />
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

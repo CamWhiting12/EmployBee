@@ -13,18 +13,22 @@ public class EditTasks {
     private static Sheet sheet;
 
     // must call before using other methods (OnCreate)
-    public static void getSheet(Context context, String fileName) throws IOException{
+//    public static void getSheet(Context context, String fileName) throws IOException{
+//        File file = new File(context.getExternalFilesDir(null), fileName);
+//        FileInputStream inputStream = new FileInputStream(file);
+//
+//        Workbook workbook = new HSSFWorkbook(inputStream);
+//        sheet = workbook.getSheetAt(0);
+//    }
+
+    // fileName is "SampleSheet.xls" hypothetically speaking
+    public static ArrayList<Task> getTasks(Context context, String fileName) throws IOException {
         File file = new File(context.getExternalFilesDir(null), fileName);
         FileInputStream inputStream = new FileInputStream(file);
 
         Workbook workbook = new HSSFWorkbook(inputStream);
         sheet = workbook.getSheetAt(0);
 
-
-    }
-
-    // fileName is "SampleSheet.xls" hypothetically speaking
-    public static ArrayList<Task> getTasks() throws IOException {
         ArrayList<Task> tasks = new ArrayList<Task>();
         for (Row row: sheet) {
             Iterator<Cell> cellIterator = row.cellIterator();
@@ -64,4 +68,6 @@ public class EditTasks {
         row.createCell(2).setCellValue(task.getPos());
         row.createCell(3).setCellValue(task.getDone());
     }
+
+
 }

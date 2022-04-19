@@ -1,5 +1,6 @@
 package com.example.employbee;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,7 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
+import java.io.IOException;
+import java.util.*;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Page_1#newInstance} factory method to
@@ -19,6 +24,9 @@ public class Page_1 extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private ListView lv;
+    private ArrayList<Task> tasks;
+    private ArrayList<String> taskStrings;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -49,16 +57,33 @@ public class Page_1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+//        Context context = null;
+//        try {
+//            tasks = EditTasks.getTasks(context, "StyleSheet.xls");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        for (Task t: tasks) {
+//            taskStrings.add(t.getTask());
+//        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_page_1, container, false);
+        View v = inflater.inflate(R.layout.fragment_page_2, container, false);
+
+//        lv = (ListView) v.findViewById(R.id.taskListView1); // Change taskListView1
+//        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.fragment_page_2, taskStrings);
+//
+//        lv.setAdapter(adapter);
+        return v;
     }
 }

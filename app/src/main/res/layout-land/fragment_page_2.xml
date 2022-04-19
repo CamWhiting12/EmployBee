@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_gray"
     tools:context=".Page_2">
 
     <LinearLayout
         android:id="@+id/allJobsTasks1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="8sp"
         android:orientation="horizontal">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,13 +33,17 @@
                     android:id="@+id/job1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/job1TitleSTR" />
+                    android:text="@string/job1TitleSTR"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="20sp" />
 
                 <CheckBox
                     android:id="@+id/checkBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="First Task" />
+                    android:text="@string/TaskPreview1"
+                    android:textColor="@color/gray" />
 
                 <ListView
                     android:id="@+id/listViewTasks1"
@@ -58,16 +64,20 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/job2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="@string/job2TitleSTR"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="20sp" />
 
                 <CheckBox
                     android:id="@+id/checkBox2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CheckBox" />
+                    android:text="@string/TaskPreview1"
+                    android:textColor="@color/gray" />
 
             </LinearLayout>
 
@@ -81,16 +91,20 @@
                 app:layout_constraintStart_toEndOf="@+id/job2Tasks">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/job3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="@string/job3TitleSTR"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="20sp" />
 
                 <CheckBox
                     android:id="@+id/checkBox3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CheckBox" />
+                    android:text="@string/TaskPreview1"
+                    android:textColor="@color/gray" />
 
             </LinearLayout>
 
@@ -105,16 +119,20 @@
                 tools:layout_editor_absoluteY="67dp">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/job4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="@string/job4TitleSTR"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="20sp" />
 
                 <CheckBox
                     android:id="@+id/checkBox4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CheckBox" />
+                    android:text="@string/TaskPreview1"
+                    android:textColor="@color/gray" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

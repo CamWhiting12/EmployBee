@@ -14,10 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployBee">
         <activity
+            android:name=".sampleShelf"
+            android:exported="false" />
+        <activity
+            android:name=".sampleRoom"
+            android:exported="false" />
+        <activity
+            android:name=".general_map"
+            android:exported="false" />
+        <activity
             android:name=".protocol_page"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Tasks1Activity"
             android:exported="false"

@@ -33,4 +33,9 @@
     <string name="protocol2">How to Perform a Citizens Arrest</string>
     <string name="protocol3">How to Clean the Dishwasher</string>
     <string name="back_button">back button</string>
+
+    <!-- map rough draft strings -->
+    <string name="goToRoom">go to room</string>
+    <string name="goToShelf">go to shelf</string>
+
 </resources>

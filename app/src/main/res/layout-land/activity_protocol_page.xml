@@ -173,13 +173,13 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/homeButton3"
-            android:layout_width="match_parent"
+            android:layout_width="122dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:onClick="goHome"
-            app:backgroundTint="@color/teal_200"
+            app:backgroundTint="@color/gold"
             app:srcCompat="@android:drawable/ic_menu_revert"
             tools:ignore="SpeakableTextPresentCheck" />
 

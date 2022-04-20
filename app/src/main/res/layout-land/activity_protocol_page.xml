@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@id/homeButtonBottomLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:context="com.example.test.searchview.MainActivity">
+            tools:context="com.example.test.searchview.MainActivity"
+            tools:layout_editor_absoluteX="-241dp"
+            tools:layout_editor_absoluteY="158dp">
 
             <ListView
                 android:id="@+id/lv1"

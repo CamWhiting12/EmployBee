@@ -61,22 +61,20 @@ public class Page_2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         Context context = getActivity().getApplicationContext();
         taskStrings = new ArrayList<String>();
-
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_page_2, container, false);
+        db = new DataBaseHelper(getActivity().getBaseContext());
 
         // Test array
         List<Task> sampleList;
-        Task task1 = new Task("first task ig", 2, 1, 0);
-        Task task2 = new Task("second task ig", 2, 1, 0);
-        Task task3 = new Task("third task ig", 2, 1, 0);
+        Task task1 = new Task("first task ig", 2, 1, false);
+        Task task2 = new Task("second task ig", 2, 1, false);
+        Task task3 = new Task("third task ig", 2, 1, false);
         // add them
         db.addTask(task1);
         db.addTask(task2);

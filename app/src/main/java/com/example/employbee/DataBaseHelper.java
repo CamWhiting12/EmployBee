@@ -8,6 +8,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.employbee.Task;
 
@@ -28,9 +29,10 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATION_TABLE = "CREATE TABLE Players ( "
-                + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT, "
-                + "position TEXT, " + "height INTEGER )";
+        Log.e("Henry", "on create");
+        String CREATION_TABLE = "CREATE TABLE Tasks ( "
+                + "task TEXT, " + "shift INT, "
+                + "position INT, " + "done BOOLEAN )";
 
         db.execSQL(CREATION_TABLE);
     }
@@ -38,11 +40,12 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // you can implement here migration process
+        Log.e("Henry", "on upgrade");
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         this.onCreate(db);
     }
 
-    public Task getPlayer(int id) {
+    public Task getTask(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_NAME, // a. table
                 COLUMNS, // b. column names
@@ -67,6 +70,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         String query = "SELECT  * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
+        Log.e("Henry", "on create6");
         Task task = null;
 
         if (cursor.moveToFirst()) {

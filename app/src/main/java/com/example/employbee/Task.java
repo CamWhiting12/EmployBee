@@ -1,35 +1,23 @@
 package com.example.employbee;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Task {
-    private String task; // Description of task
-    private int shift; // The shift that the task belongs to
-    private int pos; // The role that needs to complete the task
-    private boolean done; // Whether or not the task is completed
+    @PrimaryKey
+    public int uid;
 
-    public Task(String taskText, int shiftNum, int posNum, boolean isDone) {
-        task = taskText;
-        shift = shiftNum;
-        pos = posNum;
-        done = isDone;
-    }
+    @ColumnInfo(name = "task_name")
+    public String task;
 
-    public String getTask() {
-        return task;
-    }
+    @ColumnInfo(name = "shift_name")
+    public int shift;
 
-    public int getShift() {
-        return shift;
-    }
+    @ColumnInfo(name = "position_name")
+    public int pos;
 
-    public int getPos() {
-        return pos;
-    }
-
-    public boolean getDone() {
-        return done;
-    }
-
-    public void changeDone() {
-        done = !done;
-    }
+    @ColumnInfo(name = "done_status")
+    public boolean done;
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.room.Room;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,7 +35,7 @@ public class Page_2 extends Fragment {
     private ListView lv;
     private ArrayList<Task> tasks;
     private ArrayList<String> taskStrings;
-    private DataBaseHelper db;
+    private AppDatabase db;
 
     public Page_2() {
         // Required empty public constructor
@@ -68,22 +69,17 @@ public class Page_2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_page_2, container, false);
-        db = new DataBaseHelper(getActivity().getBaseContext());
-
+        db = Room.databaseBuilder(getActivity().getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
         // Test array
-        List<Task> sampleList;
-        Task task1 = new Task("first task ig", 2, 1, false);
-        Task task2 = new Task("second task ig", 2, 1, false);
-        Task task3 = new Task("third task ig", 2, 1, false);
+//        Task task1 = new Task("first task ig", 2, 1, false);
+//        Task task2 = new Task("second task ig", 2, 1, false);
+//        Task task3 = new Task("third task ig", 2, 1, false);
         // add them
-        db.addTask(task1);
-        db.addTask(task2);
-        db.addTask(task3);
-        // list all players
-        sampleList = db.allTasks();
+        TaskDao taskDao = db.taskDao();
+        List<Task> tasks = taskDao.getAll();
 
         lv = (ListView) v.findViewById(R.id.listViewTasks2_1);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, sampleList);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, tasks);
 
         lv.setAdapter(adapter);
         return v;

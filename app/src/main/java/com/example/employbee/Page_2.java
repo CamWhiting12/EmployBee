@@ -1,11 +1,15 @@
 package com.example.employbee;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.room.Room;
 
+import android.provider.BaseColumns;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,12 +75,15 @@ public class Page_2 extends Fragment {
         View v = inflater.inflate(R.layout.fragment_page_2, container, false);
         db = Room.databaseBuilder(getActivity().getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
         // Test array
-//        Task task1 = new Task("first task ig", 2, 1, false);
-//        Task task2 = new Task("second task ig", 2, 1, false);
-//        Task task3 = new Task("third task ig", 2, 1, false);
+        Task task1 = new Task("first task ig", 2, 1, false);
+        Task task2 = new Task("second task ig", 2, 1, false);
+        Task task3 = new Task("third task ig", 2, 1, false);
         // add them
-        TaskDao taskDao = db.taskDao();
-        List<Task> tasks = taskDao.getAll();
+
+        tasks = new ArrayList<Task>();
+        tasks.add(task1);
+        tasks.add(task2);
+        tasks.add(task3);
 
         lv = (ListView) v.findViewById(R.id.listViewTasks2_1);
         ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, tasks);

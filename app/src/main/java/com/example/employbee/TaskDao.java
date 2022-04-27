@@ -3,6 +3,7 @@ package com.example.employbee;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import java.util.List;
 
@@ -19,6 +20,9 @@ public interface TaskDao {
 
     @Insert
     void insertAll(Task... tasks);
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    public void insertTasks(Task... tasks);
 
     @Delete
     void delete(Task task);

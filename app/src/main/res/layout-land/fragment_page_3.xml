@@ -7,131 +7,115 @@
     android:background="@color/dark_gray"
     tools:context=".Page_3">
 
-    <LinearLayout
-        android:id="@+id/allJobsTasks1"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="8sp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/job1Tasks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/job2Tasks"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:id="@+id/job1Tasks"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/job2Tasks"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/job1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/job1TitleSTR"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/job1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/job1TitleSTR"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="20sp" />
+            <ListView
+                android:id="@+id/listViewTasks3_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/TaskPreview1"
-                    android:textColor="@color/gray" />
+        </LinearLayout>
 
-            </LinearLayout>
+        <LinearLayout
+            android:id="@+id/job2Tasks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/job3Tasks"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/job1Tasks"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:id="@+id/job2Tasks"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/job3Tasks"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/job1Tasks"
-                app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/job2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/job2TitleSTR"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/job2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/job2TitleSTR"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="20sp" />
+            <ListView
+                android:id="@+id/listViewTasks3_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-                <CheckBox
-                    android:id="@+id/checkBox2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/TaskPreview1"
-                    android:textColor="@color/gray" />
+        </LinearLayout>
 
-            </LinearLayout>
+        <LinearLayout
+            android:id="@+id/job3Tasks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/job4Tasks"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/job2Tasks">
 
-            <LinearLayout
-                android:id="@+id/job3Tasks"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@+id/job4Tasks"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/job2Tasks">
+            <TextView
+                android:id="@+id/job3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/job3TitleSTR"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/job3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/job3TitleSTR"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="20sp" />
+            <ListView
+                android:id="@+id/listViewTasks3_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-                <CheckBox
-                    android:id="@+id/checkBox3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/TaskPreview1"
-                    android:textColor="@color/gray" />
+        </LinearLayout>
 
-            </LinearLayout>
+        <LinearLayout
+            android:id="@+id/job4Tasks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/job3Tasks"
+            tools:layout_editor_absoluteY="67dp">
 
-            <LinearLayout
-                android:id="@+id/job4Tasks"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/job3Tasks"
-                tools:layout_editor_absoluteY="67dp">
+            <TextView
+                android:id="@+id/job4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/job4TitleSTR"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/job4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/job4TitleSTR"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="20sp" />
+            <ListView
+                android:id="@+id/listViewTasks3_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-                <CheckBox
-                    android:id="@+id/checkBox4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/TaskPreview1"
-                    android:textColor="@color/gray" />
-            </LinearLayout>
+        </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

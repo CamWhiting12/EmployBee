@@ -15,25 +15,31 @@
         android:theme="@style/Theme.EmployBee">
         <activity
             android:name=".sampleShelf"
+            android:screenOrientation="landscape"
             android:exported="false" />
         <activity
             android:name=".sampleRoom"
+            android:screenOrientation="landscape"
             android:exported="false" />
         <activity
             android:name=".general_map"
+            android:screenOrientation="landscape"
             android:exported="false" />
         <activity
             android:name=".protocol_page"
             android:exported="false"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Tasks1Activity"
             android:exported="false"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_tasks1"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

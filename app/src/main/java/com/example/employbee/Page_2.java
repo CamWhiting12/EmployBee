@@ -1,18 +1,21 @@
 package com.example.employbee;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.room.Room;
 
+import android.provider.BaseColumns;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,6 +39,7 @@ public class Page_2 extends Fragment {
     private ListView lv;
     private ArrayList<Task> tasks;
     private ArrayList<String> taskStrings;
+    private AppDatabase db;
 
     public Page_2() {
         // Required empty public constructor
@@ -62,46 +66,23 @@ public class Page_2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("Henry", "starting oncreate");
-//        Log.d("Henry", "" + getArguments());
-//
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//            Log.d("Henry", "" + mParam1 + " " + mParam2);
-//        }
-
-        Log.d("Henry", "getArgs null");
-
         Context context = getActivity().getApplicationContext();
         taskStrings = new ArrayList<String>();
-
-        Log.d("Henry", "before try");
-//        try {
-//            tasks = EditTasks.getTasks(context, "stylesheet.xls");
-//            Log.d("Henry", "" + tasks.size());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        for (Task t: tasks) {
-//            taskStrings.add(t.getTask());
-//        }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_page_2, container, false);
+        db = Room.databaseBuilder(getActivity().getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
+        TaskDao taskdao = db.taskDao();
 
-        // Test array
-        ArrayList<String> sampleList = new ArrayList<String>();
-        sampleList.add("task 1");
-        sampleList.add("task 2");
-        sampleList.add("task 78");
+        Task task1 = new Task("first task ig", 2, 1, false);
+        taskdao.insertTasks(task1);
 
-        lv = (ListView) v.findViewById(R.id.taskListView1);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, sampleList);
+        List<Task> tasks = taskdao.getAll();
+
+        lv = (ListView) v.findViewById(R.id.listViewTasks2_1);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, tasks);
 
         lv.setAdapter(adapter);
         return v;

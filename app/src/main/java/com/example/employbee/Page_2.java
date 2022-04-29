@@ -74,16 +74,12 @@ public class Page_2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_page_2, container, false);
         db = Room.databaseBuilder(getActivity().getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
-        // Test array
-        Task task1 = new Task("first task ig", 2, 1, false);
-        Task task2 = new Task("second task ig", 2, 1, false);
-        Task task3 = new Task("third task ig", 2, 1, false);
-        // add them
+        TaskDao taskdao = db.taskDao();
 
-        tasks = new ArrayList<Task>();
-        tasks.add(task1);
-        tasks.add(task2);
-        tasks.add(task3);
+        Task task1 = new Task("first task ig", 2, 1, false);
+        taskdao.insertTasks(task1);
+
+        List<Task> tasks = taskdao.getAll();
 
         lv = (ListView) v.findViewById(R.id.listViewTasks2_1);
         ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, tasks);

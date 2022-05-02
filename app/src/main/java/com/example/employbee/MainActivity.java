@@ -10,7 +10,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
+private boolean loggedIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         };
 
         thread.start();
+
+        loggedIn = false;
     }
 
     public void setTime() {
@@ -66,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
     public void startMap(View v) {
         Intent intent = new Intent(this, general_map.class);
         startActivity(intent);
+    }
+
+    public void startLogin(View v) {
+        Intent intent = new Intent(this, login_attempt.class);
+        startActivity(intent);
+
+
     }
 
 

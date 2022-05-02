@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,36 +9,106 @@
     android:background="@color/dark_gray"
     tools:context=".general_map">
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/mapLayoutMain"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/roomSample"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="openRoomSample"
-            android:text="@string/goToRoom"
-            app:layout_column="0"
-            app:layout_row="0" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/shelfSample"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/room1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/blankRoom" />
+
+            <Button
+                android:id="@+id/room2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/blankRoom" />
+
+            <Button
+                android:id="@+id/room3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/blankRoom"
+                style="?android:attr/buttonBarButtonStyle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="openShelfSample"
-            android:text="@string/goToShelf"
-            app:layout_column="1"
-            app:layout_row="0" />
+            android:orientation="horizontal">
 
-    </androidx.gridlayout.widget.GridLayout>
+            <Button
+                android:id="@+id/room4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/blankRoom"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/room5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/blankRoom"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/room6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/blankRoom" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/room7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/blankRoom"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/room8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/blankRoom" />
+
+            <Button
+                android:id="@+id/room9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/blankRoom" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"

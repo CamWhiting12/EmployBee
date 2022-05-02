@@ -37,5 +37,11 @@
     <!-- map rough draft strings -->
     <string name="goToRoom">go to room</string>
     <string name="goToShelf">go to shelf</string>
+    <string name="blankRoom">+</string>
+
+    <!-- Login -->
+    <string name="loginTitle">You are trying to enter a password-protected area. Please enter your manager ID.</string>
+    <string name="passwordEntryHint">Password</string>
+    <string name="enter">Enter</string>
 
 </resources>

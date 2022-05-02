@@ -30,6 +30,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         android:background="@color/gold"
+        android:onClick="startLogin"
         android:text="@string/managerMode"
         android:textAlignment="center"
         android:textColor="@color/black"

@@ -21,6 +21,12 @@
             android:text="@string/allTasksTitleSTR"
             android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
+        <Button
+            android:id="@+id/addTaskButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"

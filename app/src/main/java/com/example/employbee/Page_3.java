@@ -3,10 +3,17 @@ package com.example.employbee;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.room.Room;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,9 @@ public class Page_3 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ListView lv;
+    private ArrayList<Task> tasks;
+    private AppDatabase db;
 
     public Page_3() {
         // Required empty public constructor
@@ -49,16 +59,56 @@ public class Page_3 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_page_3, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_page_3, container, false);
+        db = Room.databaseBuilder(getActivity().getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
+        TaskDao taskdao = db.taskDao();
+
+        List<Task> tasks = taskdao.getAll();
+
+        // Selecting Shift
+        int thisShift = 3;
+
+        ArrayList<Task> shiftTasks = new ArrayList<Task>();
+
+        for (Task t: tasks) {
+            if (t.shift == thisShift) {
+                shiftTasks.add(t);
+            }
+        }
+
+        // Splitting by position
+        ArrayList<ArrayList<Task>> posTasks = new ArrayList<ArrayList<Task>>();
+        for (int i = 0; i < 4; i++) {
+            posTasks.add(new ArrayList<Task>());
+        }
+
+        for (Task t: shiftTasks) {
+            int pos = t.pos - 1; // Depends on posNum range
+
+            posTasks.get(pos).add(t);
+        }
+
+        // Displaying tasks
+        lv = (ListView) v.findViewById(R.id.listViewTasks3_1);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(0));
+        lv.setAdapter(adapter);
+
+        lv = (ListView) v.findViewById(R.id.listViewTasks3_2);
+        adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(1));
+        lv.setAdapter(adapter);
+
+        lv = (ListView) v.findViewById(R.id.listViewTasks3_3);
+        adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(2));
+        lv.setAdapter(adapter);
+
+        lv = (ListView) v.findViewById(R.id.listViewTasks3_4);
+        adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(3));
+        lv.setAdapter(adapter);
+
+        return v;
     }
 }

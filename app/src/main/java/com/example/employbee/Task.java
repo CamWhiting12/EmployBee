@@ -25,8 +25,10 @@ public class Task {
     public boolean done;
 
     public Task(){}
+    public static int count = 0;
 
     public Task(String taskname, int shiftnum, int posnum, boolean isdone) {
+        uid = count++;
         task = taskname;
         shift = shiftnum;
         pos = posnum;

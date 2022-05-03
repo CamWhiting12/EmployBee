@@ -11,17 +11,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
             android:id="@+id/enterTaskField"
-            android:layout_width="729dp"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/taskHint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/enterTaskHintSTR" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
 
         <EditText
             android:id="@+id/enterShiftField"
@@ -47,6 +43,18 @@
             android:layout_height="wrap_content"
             android:onClick="addTask"
             android:text="Button" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="16dp"
+            android:minWidth="48dp"
+            android:onClick="goHome"
+            app:srcCompat="@android:drawable/ic_menu_revert"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 

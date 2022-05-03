@@ -3,9 +3,13 @@ package com.example.employbee;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class AddTasks extends AppCompatActivity {
 
@@ -35,5 +39,12 @@ public class AddTasks extends AppCompatActivity {
         Task task1 = new Task(taskSTR, shiftINT, posINT, false);
         taskdao.insertTasks(task1);
 
+        //Toast here to let them know task was added
     }
+
+    public void goHome(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }

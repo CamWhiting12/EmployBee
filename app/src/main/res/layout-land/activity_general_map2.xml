@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fadingEdge="none"
     android:background="@color/dark_gray"
+    android:fadingEdge="none"
     tools:context=".general_map">
 
     <LinearLayout
@@ -22,59 +21,84 @@
             android:id="@+id/row1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/dark_gray"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/room1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/blankRoom" />
+                android:background="@color/dark_gray"
+                android:onClick="openRoom1"
+                android:text="@string/blankRoom"
+                android:textColor="@color/gold"
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/room2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/blankRoom" />
+                android:background="@color/dark_gray"
+                android:text="@string/blankRoom"
+                android:textColor="@color/gold"
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/room3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/dark_gray"
                 android:text="@string/blankRoom"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="@color/gold"
+                android:textSize="34sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/row2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/room4"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/dark_gray"
                 android:text="@string/blankRoom"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="@color/gold"
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/room5"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/dark_gray"
                 android:text="@string/blankRoom"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="@color/gold"
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/room6"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/blankRoom" />
+                android:background="@color/dark_gray"
+                android:text="@string/blankRoom"
+                android:textColor="@color/gold"
+                android:textSize="34sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -86,25 +110,33 @@
 
             <Button
                 android:id="@+id/room7"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/blankRoom"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textColor="@color/gold"
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/room8"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/blankRoom" />
+                android:text="@string/blankRoom"
+                android:textColor="@color/gold"
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/room9"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/blankRoom" />
+                android:text="@string/blankRoom"
+                android:textColor="@color/gold"
+                android:textSize="34sp" />
 
         </LinearLayout>
 

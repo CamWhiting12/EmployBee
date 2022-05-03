@@ -6,11 +6,14 @@ import java.time.ZonedDateTime;
 import java.time.LocalTime;
 import android.widget.TextView;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-private boolean loggedIn;
+
+    private boolean loggedIn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +41,7 @@ private boolean loggedIn;
 
         thread.start();
 
-        loggedIn = false;
+
     }
 
     public void setTime() {
@@ -52,7 +55,7 @@ private boolean loggedIn;
         else
             t = t.substring(0,5);
 
-        time.setText(t);
+        //TODO: time.setText(t);
     }
 
     public void startTasks1(View v) {
@@ -71,13 +74,34 @@ private boolean loggedIn;
     }
 
     public void startLogin(View v) {
-        Intent intent = new Intent(this, login_attempt.class);
-        startActivity(intent);
+
+         if(!loggedInQ()) {
+             Intent intent = new Intent(this, login_attempt.class);
+             startActivity(intent);
 
 
+         }
+
+         else if (loggedInQ()) {
+                 Toast toast = Toast.makeText(getApplicationContext(),"You Have Logged Out",Toast.LENGTH_LONG);
+                 toast.show();
+                 logOut();
+             }
+         }
+
+
+
+
+    public void logIn() {
+        loggedIn = true;
     }
 
-
+    public void logOut() {
+        loggedIn = false;
+    }
+    public boolean loggedInQ() {
+        return loggedIn;
+    }
 
 
 }

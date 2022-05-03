@@ -34,6 +34,13 @@
             android:layout_height="wrap_content"
             android:onClick="loginAttempt"
             android:text="@string/enter" />
+
+        <Button
+            android:id="@+id/returnToMainActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="returnToMain"
+            android:text="return to main activity" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

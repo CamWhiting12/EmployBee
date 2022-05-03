@@ -11,6 +11,8 @@ import android.widget.EditText;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.List;
+
 public class AddTasks extends AppCompatActivity {
 
     private AppDatabase db;
@@ -45,6 +47,14 @@ public class AddTasks extends AppCompatActivity {
     public void goHome(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void removeTask(View v) {
+        db = Room.databaseBuilder(getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
+        TaskDao taskdao = db.taskDao();
+
+        List<Task> tasks = taskdao.getAll();
+
     }
 
 }

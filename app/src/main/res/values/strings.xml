@@ -41,6 +41,8 @@
     <string name="enterTaskHintSTR">Enter the name of the task</string>
     <string name="enterShiftHintSTR">Enter the shift this task is for</string>
     <string name="enterPositionHintSTR">Enter the position this task if for</string>
+    <string name="addTaskButtonSTR">Add Task</string>
+    <string name="removeTaskButtonSTR">Remove Task</string>
 
 
 

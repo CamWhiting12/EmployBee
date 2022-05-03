@@ -25,6 +25,7 @@
             android:id="@+id/addTaskButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="goToAddTask"
             android:text="Button" />
 
         <com.google.android.material.tabs.TabLayout

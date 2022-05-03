@@ -52,4 +52,9 @@ public class Tasks1Activity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void goToAddTask(View v) {
+        Intent intent = new Intent(this, AddTasks.class);
+        startActivity(intent);
+    }
 }

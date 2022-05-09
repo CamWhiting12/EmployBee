@@ -129,13 +129,10 @@
             android:layout_width="@dimen/ButtonWidth"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/gold"
+            android:background="@color/gray"
             android:fadingEdge="none"
             android:minHeight="48dp"
-            android:onClick="startTasks1"
             android:outlineProvider="paddedBounds" />
-
-
 
         <Space
             android:layout_width="wrap_content"
@@ -147,7 +144,7 @@
             android:layout_width="@dimen/ButtonWidth"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/gold"
+            android:background="@color/gray"
             android:fadingEdge="none" />
 
         <Space
@@ -160,7 +157,7 @@
             android:layout_width="@dimen/ButtonWidth"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/gold"
+            android:background="@color/gray"
             android:fadingEdge="none" />
 
         <Space

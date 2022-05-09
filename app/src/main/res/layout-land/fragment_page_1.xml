@@ -34,7 +34,7 @@
             <ListView
                 android:id="@+id/listViewTasks1_1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
@@ -62,7 +62,7 @@
             <ListView
                 android:id="@+id/listViewTasks1_2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -87,7 +87,7 @@
             <ListView
                 android:id="@+id/listViewTasks1_3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -113,7 +113,20 @@
             <ListView
                 android:id="@+id/listViewTasks1_4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="700dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/homeButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:layout_marginBottom="16dp"
+                android:minWidth="48dp"
+                android:onClick="goHome"
+                app:backgroundTint="@color/gold"
+                app:srcCompat="@android:drawable/ic_menu_revert"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 

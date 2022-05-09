@@ -2,6 +2,7 @@ package com.example.employbee;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ListView;
 
 import java.io.IOException;
@@ -39,6 +41,7 @@ public class Page_1 extends Fragment {
     private ListView lv;
     private ArrayList<Task> tasks;
     private AppDatabase db;
+    private Context c;
 
     public Page_1() {
         // Required empty public constructor
@@ -100,22 +103,28 @@ public class Page_1 extends Fragment {
 
         // Displaying tasks
         lv = (ListView) v.findViewById(R.id.listViewTasks1_1);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(0));
+        c = getActivity().getBaseContext();
+        ArrayAdapter adapter = new ArrayAdapter(c, R.layout.taskrow, posTasks.get(0));
         lv.setAdapter(adapter);
 
         lv = (ListView) v.findViewById(R.id.listViewTasks1_2);
-        adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(1));
+        adapter = new ArrayAdapter(c, R.layout.taskrow, posTasks.get(1));
         lv.setAdapter(adapter);
 
         lv = (ListView) v.findViewById(R.id.listViewTasks1_3);
-        adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(2));
+        adapter = new ArrayAdapter(c, R.layout.taskrow, posTasks.get(2));
         lv.setAdapter(adapter);
 
         lv = (ListView) v.findViewById(R.id.listViewTasks1_4);
-        adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(3));
+        adapter = new ArrayAdapter(c, R.layout.taskrow, posTasks.get(3));
         lv.setAdapter(adapter);
 
         return v;
+    }
+
+    public void goHome(View v) {
+        Intent intent = new Intent(getActivity().getBaseContext(), MainActivity.class);
+        startActivity(intent);
     }
 
 }

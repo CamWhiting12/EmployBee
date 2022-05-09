@@ -25,6 +25,7 @@
     <string name="job3TitleSTR">Line Cook</string>
     <string name="job4TitleSTR">Waitstaff</string>
     <string name="suggested">Suggested</string>
+    <string name="AddOrRemoveTaskTitle">Add or Remove Task</string>
 
 
     <!-- Protocol Samples -->

@@ -45,15 +45,33 @@ public class AddTasks extends AppCompatActivity {
     }
 
     public void goHome(View v) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Tasks1Activity.class);
         startActivity(intent);
     }
 
     public void removeTask(View v) {
+        EditText taskText = findViewById(R.id.enterTaskField);
+        EditText shiftText = findViewById(R.id.enterShiftField);
+        EditText posText = findViewById(R.id.enterPositionField);
+
+        String taskSTR = taskText.getText().toString();
+        String shiftSTR = shiftText.getText().toString();
+        String posSTR = posText.getText().toString();
+
+        int shiftINT = Integer.parseInt(shiftSTR);
+        int posINT = Integer.parseInt(posSTR);
+
         db = Room.databaseBuilder(getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
         TaskDao taskdao = db.taskDao();
 
+        Task t = new Task(taskSTR, shiftINT, posINT, false);
         List<Task> tasks = taskdao.getAll();
+
+        for (int i = 0; i < tasks.size(); i++) {
+            if (t.equals(tasks.get(i))) {
+                taskdao.delete(t);
+            }
+        }
 
     }
 

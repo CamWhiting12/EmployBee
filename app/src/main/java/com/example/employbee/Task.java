@@ -35,6 +35,13 @@ public class Task {
         done = isdone;
     }
 
+    public boolean equals(Task t) {
+        if (task.equals(t.task) && shift == t.shift && pos == t.pos) {
+            return true;
+        }
+
+        return false;
+    }
     public String toString(){
         return task;
     }

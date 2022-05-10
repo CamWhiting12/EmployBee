@@ -124,55 +124,41 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/taskListView1"
-            style="@style/Widget.AppCompat.Button"
+        <ListView
+            android:id="@+id/homeTaskListView1"
             android:layout_width="@dimen/ButtonWidth"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/gold"
+            android:background="@color/gray"
             android:fadingEdge="none"
-            android:fontFamily="sans-serif-medium"
-            android:onClick="startTasks1"
-            android:outlineProvider="paddedBounds"
-            android:text="@string/TaskPreview1"
-            android:textColor="@color/black" />
-
-
+            android:minHeight="48dp"
+            android:outlineProvider="paddedBounds" />
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/taskList2"
-            style="?android:attr/buttonBarButtonStyle"
+        <ListView
+            android:id="@+id/homeTaskListView2"
             android:layout_width="@dimen/ButtonWidth"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/gold"
-            android:fadingEdge="none"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/TaskPreview1"
-            android:textColor="@color/black" />
+            android:background="@color/gray"
+            android:fadingEdge="none" />
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/taskList3"
-            style="?android:attr/buttonBarButtonStyle"
+        <ListView
+            android:id="@+id/homeTaskListView3"
             android:layout_width="@dimen/ButtonWidth"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/gold"
-            android:fadingEdge="none"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/TaskPreview1"
-            android:textColor="@color/black" />
+            android:background="@color/gray"
+            android:fadingEdge="none" />
 
         <Space
             android:layout_width="wrap_content"

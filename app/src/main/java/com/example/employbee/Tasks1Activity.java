@@ -7,6 +7,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.room.Room;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +21,7 @@ import com.example.employbee.databinding.ActivityTasks1Binding;
 public class Tasks1Activity extends AppCompatActivity {
 
     private ActivityTasks1Binding binding;
+    private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +36,15 @@ public class Tasks1Activity extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = binding.homeButton;
+
+        db = Room.databaseBuilder(getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
+        TaskDao taskdao = db.taskDao();;
     }
 
-    public void goHome(View v) {
-        Intent intent = new Intent(this, MainActivity.class);
+
+
+    public void goToAddTask(View v) {
+        Intent intent = new Intent(this, AddTasks.class);
         startActivity(intent);
     }
 }

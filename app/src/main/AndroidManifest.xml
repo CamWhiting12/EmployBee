@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.employbee">
-
-<!--     Stuff to allow for reading and writing excel file -->
+    <!-- Stuff to allow for reading and writing excel file -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -14,17 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployBee">
         <activity
-            android:name=".sampleShelf"
-            android:screenOrientation="landscape"
+            android:name=".AddTasks"
             android:exported="false" />
+        <activity
+            android:name=".sampleShelf"
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".sampleRoom"
-            android:screenOrientation="landscape"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".general_map"
-            android:screenOrientation="landscape"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".protocol_page"
             android:exported="false"
@@ -33,8 +35,8 @@
         <activity
             android:name=".Tasks1Activity"
             android:exported="false"
-            android:screenOrientation="landscape"
             android:label="@string/title_activity_tasks1"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"

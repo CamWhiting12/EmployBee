@@ -5,6 +5,7 @@ import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -69,7 +70,7 @@ public class AddTasks extends AppCompatActivity {
 
         for (int i = 0; i < tasks.size(); i++) {
             if (t.equals(tasks.get(i))) {
-                taskdao.delete(t);
+                taskdao.delete(tasks.get(i));
             }
         }
 

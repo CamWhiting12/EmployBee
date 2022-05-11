@@ -14,17 +14,26 @@ import java.util.List;
 
 import android.widget.TextView;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 public class MainActivity extends AppCompatActivity {
 
+    private boolean loggedIn;
     private ListView lv;
     private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if(!loggedInQ()) {
+            Toast toast = Toast.makeText(getApplicationContext(),"You SUCK",Toast.LENGTH_LONG);
+            toast.show();
+        };
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -80,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         lv.setAdapter(adapter);
     }
 
+
     public void setTime() {
         TextView time = findViewById(R.id.clock);
         LocalTime now = LocalTime.now();
@@ -91,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         else
             t = t.substring(0,5);
 
-        time.setText(t);
+        //TODO: time.setText(t);
     }
 
     public void startTasks1(View v) {
@@ -109,7 +119,32 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void startLogin(View v) {
 
+         if(!loggedInQ()) {
+             Intent intent = new Intent(this, login_attempt.class);
+             startActivity(intent);
+
+         }
+
+         else if (loggedInQ()) {
+                 Toast toast = Toast.makeText(getApplicationContext(),"You Have Logged Out",Toast.LENGTH_LONG);
+                 toast.show();
+                 logOut();
+             }
+         }
+
+    public void logIn() {
+        loggedIn = true;
+    }
+
+    public void logOut() {
+        loggedIn = false;
+    }
+
+    public boolean loggedInQ() {
+        return loggedIn;
+    }
 
 
 }

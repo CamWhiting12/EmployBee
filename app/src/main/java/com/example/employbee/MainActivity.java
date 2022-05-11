@@ -28,12 +28,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        if(!loggedInQ()) {
-            Toast toast = Toast.makeText(getApplicationContext(),"You SUCK",Toast.LENGTH_LONG);
-            toast.show();
-        };
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -75,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             allTasks.get(val-1).add(tasks.get(i));
         }
 
-        Log.e("Henry", tasks.toString());
         lv = (ListView) findViewById(R.id.homeTaskListView1);
         ArrayAdapter adapter = new ArrayAdapter(getBaseContext(), R.layout.taskrow1, allTasks.get(0));
         lv.setAdapter(adapter);
@@ -91,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void setTime() {
-        TextView time = findViewById(R.id.clock);
+        TextView time = findViewById(R.id.clock3);
         LocalTime now = LocalTime.now();
 
         String t = now.toString();
@@ -101,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         else
             t = t.substring(0,5);
 
-        //TODO: time.setText(t);
+        time.setText(t);
     }
 
     public void startTasks1(View v) {

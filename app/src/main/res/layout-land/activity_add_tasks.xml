@@ -45,7 +45,7 @@
             android:text="@string/addTaskButtonSTR" />
 
         <Button
-            android:id="@+id/removeTaskConfrm"
+            android:id="@+id/removeTaskConfirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="removeTask"

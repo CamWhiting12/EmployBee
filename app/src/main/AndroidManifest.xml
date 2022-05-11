@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.employbee" >
+
     <!-- Stuff to allow for reading and writing excel file -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -13,10 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployBee" >
         <activity
+
             android:name=".create_room"
             android:exported="false" />
         <activity
             android:name=".login_attempt"
+            android:exported="false" />
+
+            android:name=".AddTasks"
             android:exported="false" />
         <activity
             android:name=".sampleShelf"
@@ -26,6 +31,7 @@
             android:name=".sampleRoom"
             android:exported="false"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".general_map"
             android:exported="false"

@@ -35,8 +35,13 @@
         app:layout_constraintTop_toBottomOf="@+id/clock">
 
 
+
         <LinearLayout
             android:layout_width="match_parent"
+
+        <ListView
+            android:id="@+id/homeTaskListView1"
+            android:layout_width="@dimen/ButtonWidth"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
@@ -140,6 +145,43 @@
                 android:text="@string/TaskPreview1"
                 android:textColor="@color/black" />
         </LinearLayout>
+
+            android:background="@color/gray"
+            android:fadingEdge="none"
+            android:minHeight="48dp"
+            android:outlineProvider="paddedBounds" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ListView
+            android:id="@+id/homeTaskListView2"
+            android:layout_width="@dimen/ButtonWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/gray"
+            android:fadingEdge="none" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ListView
+            android:id="@+id/homeTaskListView3"
+            android:layout_width="@dimen/ButtonWidth"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/gray"
+            android:fadingEdge="none" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
 
     </LinearLayout>
 

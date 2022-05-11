@@ -38,7 +38,6 @@ public class Page_2 extends Fragment {
     private String mParam2;
     private ListView lv;
     private ArrayList<Task> tasks;
-    private ArrayList<String> taskStrings;
     private AppDatabase db;
 
     public Page_2() {
@@ -66,8 +65,6 @@ public class Page_2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Context context = getActivity().getApplicationContext();
-        taskStrings = new ArrayList<String>();
     }
 
     @Override
@@ -76,15 +73,48 @@ public class Page_2 extends Fragment {
         db = Room.databaseBuilder(getActivity().getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
         TaskDao taskdao = db.taskDao();
 
-        Task task1 = new Task("first task ig", 2, 1, false);
-        taskdao.insertTasks(task1);
-
         List<Task> tasks = taskdao.getAll();
 
-        lv = (ListView) v.findViewById(R.id.listViewTasks2_1);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, tasks);
+        // Selecting Shift
+        int thisShift = 2;
 
+        ArrayList<Task> shiftTasks = new ArrayList<Task>();
+
+        for (Task t: tasks) {
+            if (t.shift == thisShift) {
+                shiftTasks.add(t);
+            }
+        }
+
+        // Splitting by position
+        ArrayList<ArrayList<Task>> posTasks = new ArrayList<ArrayList<Task>>();
+        for (int i = 0; i < 4; i++) {
+            posTasks.add(new ArrayList<Task>());
+        }
+
+        for (Task t: shiftTasks) {
+            int pos = t.pos - 1; // Depends on posNum range
+
+            posTasks.get(pos).add(t);
+        }
+
+        // Displaying tasks
+        lv = (ListView) v.findViewById(R.id.listViewTasks2_1);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(0));
         lv.setAdapter(adapter);
+
+        lv = (ListView) v.findViewById(R.id.listViewTasks2_2);
+        adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(1));
+        lv.setAdapter(adapter);
+
+        lv = (ListView) v.findViewById(R.id.listViewTasks2_3);
+        adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(2));
+        lv.setAdapter(adapter);
+
+        lv = (ListView) v.findViewById(R.id.listViewTasks2_4);
+        adapter = new ArrayAdapter(getActivity().getBaseContext(), R.layout.taskrow, posTasks.get(3));
+        lv.setAdapter(adapter);
+
         return v;
     }
 

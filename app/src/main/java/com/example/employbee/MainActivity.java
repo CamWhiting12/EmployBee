@@ -1,18 +1,29 @@
 package com.example.employbee;
 import android.content.Intent;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextClock;
 import java.time.ZonedDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.widget.TextView;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 public class MainActivity extends AppCompatActivity {
 
     private boolean loggedIn;
+    private ListView lv;
+    private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +59,34 @@ public class MainActivity extends AppCompatActivity {
 
         thread.start();
 
+        db = Room.databaseBuilder(getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
+        TaskDao taskdao = db.taskDao();
 
+        List<Task> tasks = taskdao.getAll();
+
+        ArrayList<ArrayList<Task>> allTasks = new ArrayList<ArrayList<Task>>();
+        allTasks.add(new ArrayList<Task>());
+        allTasks.add(new ArrayList<Task>());
+        allTasks.add(new ArrayList<Task>());
+
+        for (int i = 0; i < tasks.size(); i++) {
+            int val = tasks.get(i).shift;
+
+            allTasks.get(val-1).add(tasks.get(i));
+        }
+
+        Log.e("Henry", tasks.toString());
+        lv = (ListView) findViewById(R.id.homeTaskListView1);
+        ArrayAdapter adapter = new ArrayAdapter(getBaseContext(), R.layout.taskrow1, allTasks.get(0));
+        lv.setAdapter(adapter);
+
+        lv = (ListView) findViewById(R.id.homeTaskListView2);
+        adapter = new ArrayAdapter(getBaseContext(), R.layout.taskrow1, allTasks.get(1));
+        lv.setAdapter(adapter);
+
+        lv = (ListView) findViewById(R.id.homeTaskListView3);
+        adapter = new ArrayAdapter(getBaseContext(), R.layout.taskrow1, allTasks.get(2));
+        lv.setAdapter(adapter);
     }
 
 

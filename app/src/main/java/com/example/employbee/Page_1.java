@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
@@ -38,7 +39,11 @@ public class Page_1 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private ListView lv;
+    private ListView lv1;
+    private ListView lv2;
+    private ListView lv3;
+    private ListView lv4;
+
     private ArrayList<Task> tasks;
     private AppDatabase db;
     private Context c;
@@ -102,25 +107,72 @@ public class Page_1 extends Fragment {
         }
 
         // Displaying tasks
-        lv = (ListView) v.findViewById(R.id.listViewTasks1_1);
+        lv1 = (ListView) v.findViewById(R.id.listViewTasks1_1);
         c = getActivity().getBaseContext();
         ArrayAdapter adapter = new ArrayAdapter(c, R.layout.taskrow, posTasks.get(0));
-        lv.setAdapter(adapter);
+        lv1.setAdapter(adapter);
+        Log.e("Henry", "" + lv1);
+        for (int i = 0; i <= lv1.getLastVisiblePosition(); i++) {
 
-        lv = (ListView) v.findViewById(R.id.listViewTasks1_2);
+            CheckBox check = (CheckBox) lv1.getChildAt(i);
+            Log.e("Henry", "a" + check);
+
+//            if (posTasks.get(0).get(i).done) {
+//                CheckBox check = (CheckBox) lv1.getChildAt(i);
+//                check.setChecked(true);
+//            }
+        }
+
+        lv2 = (ListView) v.findViewById(R.id.listViewTasks1_2);
         adapter = new ArrayAdapter(c, R.layout.taskrow, posTasks.get(1));
-        lv.setAdapter(adapter);
+        lv2.setAdapter(adapter);
 
-        lv = (ListView) v.findViewById(R.id.listViewTasks1_3);
+        lv3 = (ListView) v.findViewById(R.id.listViewTasks1_3);
         adapter = new ArrayAdapter(c, R.layout.taskrow, posTasks.get(2));
-        lv.setAdapter(adapter);
+        lv3.setAdapter(adapter);
 
-        lv = (ListView) v.findViewById(R.id.listViewTasks1_4);
+        lv4 = (ListView) v.findViewById(R.id.listViewTasks1_4);
         adapter = new ArrayAdapter(c, R.layout.taskrow, posTasks.get(3));
-        lv.setAdapter(adapter);
+        lv4.setAdapter(adapter);
+
+        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                CheckBox check = (CheckBox) parent.getItemAtPosition(position);
+                posTasks.get(0).get(position).done = !posTasks.get(0).get(position).done;
+                Log.e("Henry", "here");
+
+            }
+        });
+
+        lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                CheckBox check = (CheckBox) parent.getItemAtPosition(position);
+                posTasks.get(1).get(position).done = !posTasks.get(0).get(position).done;
+            }
+        });
+
+        lv3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                CheckBox check = (CheckBox) parent.getItemAtPosition(position);
+                posTasks.get(2).get(position).done = !posTasks.get(0).get(position).done;
+            }
+        });
+
+        lv4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                CheckBox check = (CheckBox) parent.getItemAtPosition(position);
+                posTasks.get(3).get(position).done = !posTasks.get(0).get(position).done;
+            }
+        });
 
         return v;
     }
+
+
 
     public void goHome(View v) {
         Intent intent = new Intent(getActivity().getBaseContext(), MainActivity.class);

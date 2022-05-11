@@ -18,9 +18,6 @@
             android:name=".create_room"
             android:exported="false" />
         <activity
-            android:name=".login_attempt"
-            android:exported="false" />
-
             android:name=".AddTasks"
             android:exported="false" />
         <activity

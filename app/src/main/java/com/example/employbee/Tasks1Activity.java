@@ -11,9 +11,12 @@ import androidx.room.Room;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.employbee.ui.main.SectionsPagerAdapter;
 import com.example.employbee.databinding.ActivityTasks1Binding;
@@ -22,6 +25,7 @@ public class Tasks1Activity extends AppCompatActivity {
 
     private ActivityTasks1Binding binding;
     private AppDatabase db;
+    private ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +45,13 @@ public class Tasks1Activity extends AppCompatActivity {
         TaskDao taskdao = db.taskDao();;
     }
 
-
-
     public void goToAddTask(View v) {
         Intent intent = new Intent(this, AddTasks.class);
+        startActivity(intent);
+    }
+
+    public void goHome(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

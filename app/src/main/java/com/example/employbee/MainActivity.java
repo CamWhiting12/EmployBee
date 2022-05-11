@@ -16,6 +16,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if(!loggedInQ()) {
+            Toast toast = Toast.makeText(getApplicationContext(),"You SUCK",Toast.LENGTH_LONG);
+            toast.show();
+        };
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -43,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
     public void setTime() {
         TextView time = findViewById(R.id.clock);
@@ -79,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
              Intent intent = new Intent(this, login_attempt.class);
              startActivity(intent);
 
-
          }
 
          else if (loggedInQ()) {
@@ -89,9 +96,6 @@ public class MainActivity extends AppCompatActivity {
              }
          }
 
-
-
-
     public void logIn() {
         loggedIn = true;
     }
@@ -99,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
     public void logOut() {
         loggedIn = false;
     }
+
     public boolean loggedInQ() {
         return loggedIn;
     }

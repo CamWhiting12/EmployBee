@@ -37,7 +37,7 @@ public class protocol_page extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.lv1);
         ;
         list = new ArrayList<>();
-        list.add("How to Use a Coupon".toUpperCase(Locale.ROOT));
+        list.add(("Coupon").toUpperCase(Locale.ROOT));
         list.add("How to Perform a Citizens Arrest".toUpperCase(Locale.ROOT));
         list.add("How to Clean the Dishwasher".toUpperCase(Locale.ROOT));
 

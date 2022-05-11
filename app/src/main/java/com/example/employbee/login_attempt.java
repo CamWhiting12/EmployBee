@@ -1,7 +1,5 @@
 package com.example.employbee;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
@@ -18,9 +16,13 @@ public class login_attempt extends MainActivity {
 
     }
 
-    public void returnToMain() {
+    public void returnToMain(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+
+
+
+       // return(super.loggedInQ());
     }
 
     public void loginAttempt(View v) {
@@ -33,6 +35,11 @@ public class login_attempt extends MainActivity {
             toast.show();
 
             super.logIn();
+
+            if(super.loggedInQ()) {
+                Toast toasst = Toast.makeText(getApplicationContext(),"login successful",Toast.LENGTH_LONG);
+                toasst.show();
+            };
 
            // Intent intent = new Intent(this, create_room.class);
            // startActivity(intent);

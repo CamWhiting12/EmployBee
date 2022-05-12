@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -29,20 +30,34 @@ public class AddTasks extends AppCompatActivity {
         EditText shiftText = findViewById(R.id.enterShiftField);
         EditText posText = findViewById(R.id.enterPositionField);
 
+        Log.e("Henry", "" + shiftText);
+
         String taskSTR = taskText.getText().toString();
         String shiftSTR = shiftText.getText().toString();
         String posSTR = posText.getText().toString();
 
-        int shiftINT = Integer.parseInt(shiftSTR);
-        int posINT = Integer.parseInt(posSTR);
+        Toast toast;
 
-        db = Room.databaseBuilder(getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
-        TaskDao taskdao = db.taskDao();
+        if (!isEmpty(taskSTR) && !isEmpty(shiftSTR) && !isEmpty(posSTR)) {
 
-        Task task1 = new Task(taskSTR, shiftINT, posINT, false);
-        taskdao.insertTasks(task1);
 
-        //Toast here to let them know task was added
+            int shiftINT = Integer.parseInt(shiftSTR);
+            int posINT = Integer.parseInt(posSTR);
+
+            db = Room.databaseBuilder(getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
+            TaskDao taskdao = db.taskDao();
+
+            Task task1 = new Task(taskSTR, shiftINT, posINT, false);
+            taskdao.insertTasks(task1);
+
+            toast = Toast.makeText(getApplicationContext(), "Task added successfully", Toast.LENGTH_SHORT);
+        }
+
+        else {
+            toast = Toast.makeText(getApplicationContext(), "The field is empty. Please try again.", Toast.LENGTH_SHORT);
+        }
+
+        toast.show();
     }
 
     public void goHome(View v) {
@@ -55,25 +70,42 @@ public class AddTasks extends AppCompatActivity {
         EditText shiftText = findViewById(R.id.enterShiftField);
         EditText posText = findViewById(R.id.enterPositionField);
 
+        Log.e("Henry", "" + shiftText);
+
         String taskSTR = taskText.getText().toString();
         String shiftSTR = shiftText.getText().toString();
         String posSTR = posText.getText().toString();
 
-        int shiftINT = Integer.parseInt(shiftSTR);
-        int posINT = Integer.parseInt(posSTR);
+        Toast toast;
 
-        db = Room.databaseBuilder(getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
-        TaskDao taskdao = db.taskDao();
+        if (!isEmpty(taskSTR) && !isEmpty(shiftSTR) && !isEmpty(posSTR)) {
 
-        Task t = new Task(taskSTR, shiftINT, posINT, false);
-        List<Task> tasks = taskdao.getAll();
+            int shiftINT = Integer.parseInt(shiftSTR);
+            int posINT = Integer.parseInt(posSTR);
 
-        for (int i = 0; i < tasks.size(); i++) {
-            if (t.equals(tasks.get(i))) {
-                taskdao.delete(tasks.get(i));
+            db = Room.databaseBuilder(getBaseContext(), AppDatabase.class, "Tasks").allowMainThreadQueries().build();
+            TaskDao taskdao = db.taskDao();
+
+            Task t = new Task(taskSTR, shiftINT, posINT, false);
+            List<Task> tasks = taskdao.getAll();
+
+            for (int i = 0; i < tasks.size(); i++) {
+                if (t.equals(tasks.get(i))) {
+                    taskdao.delete(tasks.get(i));
+                }
             }
+
+            toast = Toast.makeText(getApplicationContext(), "Task removed", Toast.LENGTH_SHORT);
         }
 
+        else {
+            toast = Toast.makeText(getApplicationContext(), "The field is empty. Please try again.", Toast.LENGTH_SHORT);
+        }
+
+        toast.show();
     }
 
+    private boolean isEmpty(String s) {
+        return s.equals("");
+    }
 }

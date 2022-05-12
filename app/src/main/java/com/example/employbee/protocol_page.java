@@ -2,6 +2,7 @@ package com.example.employbee;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,7 @@ public class protocol_page extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +39,13 @@ public class protocol_page extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.lv1);
         ;
         list = new ArrayList<>();
-        list.add(("Coupon").toUpperCase(Locale.ROOT));
-        list.add("How to Perform a Citizens Arrest".toUpperCase(Locale.ROOT));
-        list.add("How to Clean the Dishwasher".toUpperCase(Locale.ROOT));
+        list.add(getString(R.string.protocol1));
+        list.add(getString(R.string.protocol2));
+        list.add(getString(R.string.protocol3));
+        list.add(getString(R.string.protocol4));
+        list.add(getString(R.string.protocol5));
+
+
 
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
@@ -50,7 +56,7 @@ public class protocol_page extends AppCompatActivity {
             public boolean onQueryTextSubmit(String query) {
                 query = query.toLowerCase(Locale.ROOT);
 
-                if (list.contains(query.toLowerCase(Locale.ROOT))) {
+                if (list.contains(query.toUpperCase(Locale.ROOT))) {
                     adapter.getFilter().filter(query);
                 } else {
                     Toast.makeText(protocol_page.this, "No Match found", Toast.LENGTH_LONG).show();
@@ -67,6 +73,5 @@ public class protocol_page extends AppCompatActivity {
 
 
     }
-
 
 }

@@ -33,9 +33,9 @@
     <LinearLayout
         android:id="@+id/TaskButtons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/BottomButtonLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topLayout">
 
@@ -53,29 +53,26 @@
                 android:id="@+id/tasks1"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/black"
                 android:fadingEdge="none"
                 android:fontFamily="sans-serif-medium"
-                android:onClick="startTasks1"
+
+                android:minHeight="48dp"
                 android:text="@string/tasks1STR"
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
 
-            <Button
+            <ListView
                 android:id="@+id/taskListView1"
-                style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/gold"
                 android:fadingEdge="none"
-                android:fontFamily="sans-serif-medium"
-                android:onClick="startTasks1"
-                android:outlineProvider="paddedBounds"
-                android:text="@string/TaskPreview1"
-                android:textColor="@color/black" />
+
+                android:outlineProvider="paddedBounds" />
 
         </LinearLayout>
 
@@ -90,28 +87,26 @@
 
             <Button
                 android:id="@+id/tasks2"
-                style="?android:attr/buttonBarButtonStyle"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/black"
                 android:fadingEdge="none"
                 android:fontFamily="sans-serif-medium"
+                android:minHeight="48dp"
                 android:text="@string/tasks2STR"
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
 
-            <Button
+            <ListView
                 android:id="@+id/taskList2"
-                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/gold"
                 android:fadingEdge="none"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/TaskPreview1"
-                android:textColor="@color/black" />
+                android:outlineProvider="paddedBounds" />
         </LinearLayout>
 
         <LinearLayout
@@ -125,7 +120,7 @@
 
             <Button
                 android:id="@+id/tasks3"
-                style="?android:attr/buttonBarButtonStyle"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -136,17 +131,14 @@
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
 
-            <Button
+            <ListView
                 android:id="@+id/taskList3"
-                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/gold"
                 android:fadingEdge="none"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/TaskPreview1"
-                android:textColor="@color/black" />
+                android:outlineProvider="paddedBounds" />
         </LinearLayout>
 
     </LinearLayout>

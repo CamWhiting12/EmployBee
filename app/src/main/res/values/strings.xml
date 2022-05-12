@@ -9,7 +9,6 @@
     <string name="tab_text_2">Afternoon Tasks</string>
     <string name="tab_text_3">Closing Tasks</string>
     <string name="allTasksTitleSTR">Tasks</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="managerMode">manager mode</string>
     <string name="protocolButtonText">protocol</string>
@@ -20,37 +19,19 @@
     <string name="previewAltText3">preview list of tasks for closing</string>
     <string name="mapButtonText">map</string>
     <string name="protocolTitle">Protocol Search</string>
-
-
-    <string name="option1">How to Clean the Dishwasher</string>
-    <string name="option2">How to Change the Lightbulbs</string>
-    <string name="option3">How to Clean the Refrigerator</string>
-    <string name="option4">How to Clean the Blender</string>
-
+    <string name="option1">option 1</string>
     <string name="job1TitleSTR">Chef</string>
     <string name="job2TitleSTR">Dishwasher</string>
     <string name="job3TitleSTR">Line Cook</string>
     <string name="job4TitleSTR">Waitstaff</string>
     <string name="suggested">Suggested</string>
+    <string name="AddOrRemoveTaskTitle">Add or Remove Task</string>
 
 
     <!-- Protocol Samples -->
     <string name="protocol1">How to Use a Coupon</string>
-    <string name="protocol2">How to Restock the Refrigerator</string>
+    <string name="protocol2">How to Perform a Citizens Arrest</string>
     <string name="protocol3">How to Clean the Dishwasher</string>
-    <string name="protocol4">How to Change the Lightbulbs</string>
-    <string name="protocol5">How to Clean the Refrigerator</string>
-    <string name="protocol6">How to Perform a Citizens Arrest</string>
-    <string name="protocol7">How to Set Up the Dishwasher</string>
-
-    <string name="nowViewing">Now Viewing:</string>
-    <string name="howToCleanTheDishwasher">This is how you clean the dishwasher.
-        This is how you clean the dishwasher.
-        \n this is step 1.
-        \n this is step 2.
-        \n this is step 3.
-        \n this is step 4.</string>
-
     <string name="back_button">back button</string>
 
     <!-- map rough draft strings -->
@@ -77,6 +58,14 @@
     <!-- creating a room strings -->
     <string name="enterNamePrompt"> You are creating a new room. Please enter a name for this room.</string>
     <string name="enterNameHint"> Enter Room Name Here</string>
+
+    <!-- add tasks screen -->
+    <string name="enterTaskHintSTR">Enter the name of the task</string>
+    <string name="enterShiftHintSTR">Enter the shift this task is for</string>
+    <string name="enterPositionHintSTR">Enter the position this task if for</string>
+    <string name="addTaskButtonSTR">Add Task</string>
+    <string name="removeTaskButtonSTR">Remove Task</string>
+
 
 
 </resources>

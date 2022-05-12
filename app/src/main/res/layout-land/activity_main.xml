@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,35 +6,43 @@
     android:layout_height="match_parent"
     android:background="@color/dark_gray"
     android:fadingEdge="none"
-    android:outlineProvider="bounds"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/clock"
+    <LinearLayout
+        android:id="@+id/topLayout"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/ClockHeight"
-        android:outlineAmbientShadowColor="@color/gold"
-        android:outlineSpotShadowColor="@color/gold"
-        android:shadowColor="@color/gold"
-        android:text="@string/time"
-        android:textAlignment="center"
-        android:textColor="@color/gold"
-        android:textSize="48sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/clock3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/ClockHeight"
+            android:outlineAmbientShadowColor="@color/gold"
+            android:outlineSpotShadowColor="@color/gold"
+            android:shadowColor="@color/gold"
+            android:text="@string/time"
+            android:textAlignment="center"
+            android:textColor="@color/gold"
+            android:textSize="48sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/TaskButtons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/BottomButtonLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clock">
+        app:layout_constraintTop_toBottomOf="@id/topLayout">
 
 
         <LinearLayout
+            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -55,27 +62,25 @@
                 android:onClick="startTasks1"
                 android:text="@string/tasks1STR"
                 android:textColor="@color/gold"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-            <Button
-                android:id="@+id/taskListView1"
-                style="@style/Widget.AppCompat.Button"
+            <ListView
+                android:id="@+id/homeTaskListView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/gold"
                 android:fadingEdge="none"
-                android:fontFamily="sans-serif-medium"
-                android:onClick="startTasks1"
-                android:outlineProvider="paddedBounds"
-                android:text="@string/TaskPreview1"
-                android:textColor="@color/black" />
+                android:minHeight="48dp"
+                android:outlineProvider="paddedBounds" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
@@ -85,31 +90,33 @@
                 android:id="@+id/tasks2"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/black"
                 android:fadingEdge="none"
                 android:fontFamily="sans-serif-medium"
+                android:minHeight="48dp"
+                android:onClick="startTasks1"
                 android:text="@string/tasks2STR"
                 android:textColor="@color/gold"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-            <Button
-                android:id="@+id/taskList2"
-                style="?android:attr/buttonBarButtonStyle"
+            <ListView
+                android:id="@+id/homeTaskListView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/gold"
                 android:fadingEdge="none"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/TaskPreview1"
-                android:textColor="@color/black" />
+                android:minHeight="48dp"
+                android:outlineProvider="paddedBounds" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
@@ -119,26 +126,27 @@
                 android:id="@+id/tasks3"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/black"
                 android:fadingEdge="none"
                 android:fontFamily="sans-serif-medium"
+                android:minHeight="48dp"
+                android:onClick="startTasks1"
                 android:text="@string/tasks3STR"
                 android:textColor="@color/gold"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-            <Button
-                android:id="@+id/taskList3"
-                style="?android:attr/buttonBarButtonStyle"
+            <ListView
+                android:id="@+id/homeTaskListView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/gold"
                 android:fadingEdge="none"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/TaskPreview1"
-                android:textColor="@color/black" />
+                android:minHeight="48dp"
+                android:outlineProvider="paddedBounds" />
         </LinearLayout>
 
     </LinearLayout>
@@ -162,7 +170,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/gold"
-            android:onClick="startTasks1"
             android:text="@string/schedulesButtonText"
             android:textColor="@color/black"
             android:textSize="24sp" />
@@ -192,5 +199,4 @@
             android:textSize="24sp" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

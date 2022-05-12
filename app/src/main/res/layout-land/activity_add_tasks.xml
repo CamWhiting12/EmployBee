@@ -7,33 +7,92 @@
     tools:context=".AddTasks">
 
     <LinearLayout
+        android:id="@+id/parentLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/dark_gray"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/addATask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/addATask"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/gold"
+            android:textSize="48sp" />
+
+        <TextView
+            android:id="@+id/enterTaskName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enterTaskNamePrompt"
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/enterTaskField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:ems="10"
+            android:hint="@string/enterTaskNameHint"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:shadowColor="@color/gray"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enterShiftPrompt"
+            android:textColor="@color/yellow"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enterShiftGuide"
+            android:textColor="@color/yellow"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/enterShiftField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/enterShiftHintSTR"
+            android:hint="@string/enterShiftHint"
             android:inputType="number"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enterRolePrompt"
+            android:textColor="@color/yellow"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/enterPositionField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/enterPositionHintSTR"
+            android:hint="@string/enterRoleHint"
             android:inputType="number"
             android:minHeight="48dp" />
 

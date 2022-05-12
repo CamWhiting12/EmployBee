@@ -32,6 +32,8 @@
     <string name="protocol1">How to Use a Coupon</string>
     <string name="protocol2">How to Perform a Citizens Arrest</string>
     <string name="protocol3">How to Clean the Dishwasher</string>
+    <string name="protocol4">How to Change the Lightbulbs</string>
+    <string name="protocol5">How to Clean the Refrigerator</string>
     <string name="back_button">back button</string>
 
     <!-- map rough draft strings -->
@@ -45,6 +47,16 @@
     <string name="enter">Enter</string>
     <string name="title_activity_create_room">create_room</string>
 
+    <!-- creating a task strings -->
+    <string name="addATask">Edit a Task</string>
+    <string name="enterTaskNamePrompt">Enter Task Name in the box below.</string>
+    <string name="enterTaskNameHint">Task Name</string>
+    <string name="enterShiftHint">Shift Number</string>
+    <string name="enterShiftPrompt">Enter Shift Number in the box below.</string>
+    <string name="enterShiftGuide">Morning Shift = 1 \nAfternoon Shift = 2 \nClosing Shift = 3</string>
+    <string name="enterRoleHint">Role Number</string>
+    <string name="enterRolePrompt">Enter Role Number in the box below.</string>
+    <string name="enterRoleGuide">Chef = 1 \nWaitstaff = 2 \nDishwasher = 3\nLinecook = 4</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

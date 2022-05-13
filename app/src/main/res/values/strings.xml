@@ -56,7 +56,7 @@
     <string name="enterShiftGuide">Morning Shift = 1 \nAfternoon Shift = 2 \nClosing Shift = 3</string>
     <string name="enterRoleHint">Role Number</string>
     <string name="enterRolePrompt">Enter Role Number in the box below.</string>
-    <string name="enterRoleGuide">Chef = 1 \nWaitstaff = 2 \nDishwasher = 3\nLinecook = 4</string>
+    <string name="enterRoleGuide">Chef = 1 \nDishwasher = 2 \nLine Cook = 3\Waitstaff = 4</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

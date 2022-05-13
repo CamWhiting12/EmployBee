@@ -126,7 +126,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/gold"
-                    android:text="@string/option2"
+                    android:text="@string/option1"
                     android:textColor="@color/black" />
 
                 <Button
@@ -134,7 +134,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/gold"
-                    android:text="@string/option3"
+                    android:text="@string/option1"
                     android:textColor="@color/black" />
 
             </LinearLayout>
@@ -150,7 +150,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:text="@string/nowViewing"
+                    android:text="@string/option1"
                     android:textColor="@color/yellow" />
 
                 <TextView
@@ -168,7 +168,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/howToCleanTheDishwasher" />
+                    android:text="option1" />
             </LinearLayout>
 
         </LinearLayout>

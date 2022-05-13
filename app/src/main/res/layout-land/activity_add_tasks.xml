@@ -149,6 +149,7 @@
                     android:background="@color/gold"
                     android:onClick="addTask"
                     android:text="@string/addTaskButtonSTR"
+                    android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <Button
@@ -162,6 +163,7 @@
                     android:background="@color/gold"
                     android:onClick="removeTask"
                     android:text="@string/removeTaskButtonSTR"
+                    android:textColor="@color/black"
                     android:textSize="14sp" />
             </LinearLayout>
 

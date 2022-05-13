@@ -146,15 +146,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="@string/option1"
-                    android:textColor="@color/yellow" />
-
-                <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/titleView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
@@ -165,7 +157,7 @@
                     android:typeface="normal" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/infoView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="option1" />

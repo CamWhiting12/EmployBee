@@ -1,13 +1,9 @@
 package com.example.employbee;
 import android.content.Intent;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextClock;
-import java.time.ZonedDateTime;
+
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             allTasks.get(val-1).add(tasks.get(i));
         }
 
-        lv = (ListView) findViewById(R.id.homeTaskListView1);
+        lv = (ListView) findViewById(R.id.homeTaskListView);
         ArrayAdapter adapter = new ArrayAdapter(getBaseContext(), R.layout.taskrow1, allTasks.get(0));
         lv.setAdapter(adapter);
 
